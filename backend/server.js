@@ -16,11 +16,8 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: [
-    process.env.FRONTEND_URL || "http://localhost:5173",
-    "http://localhost:3000",
-  ],
-  credentials: true,
+  origin: "*",
+  credentials: false,
 }));
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
